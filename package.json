@@ -7,7 +7,7 @@
     "examples": "webpack-dev-server --config examples/webpack.config.js",
     "build": "eslint src examples && babel src --out-dir modules",
     "prepublish": "npm run build",
-    "preinstall": "npm run build"
+    "preinstall": "babel src --out-dir modules"
   },
   "keywords": [
     "react",
