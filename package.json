@@ -1,5 +1,5 @@
 {
-  "name": "@purpose/react-sticky-box",
+  "name": "@oroce/react-sticky-box",
   "version": "0.4.8",
   "description": "Boxes that behave nicely while scrolling",
   "scripts": {
