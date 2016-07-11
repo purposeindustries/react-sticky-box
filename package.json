@@ -6,7 +6,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "examples": "webpack-dev-server --config examples/webpack.config.js",
     "build": "eslint src examples && babel src --out-dir modules",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "preinstall": "npm run build"
   },
   "keywords": [
     "react",
