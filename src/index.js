@@ -26,11 +26,15 @@ export default class OSBox extends React.Component {
   static displayName = "OSBox"
 
   static propTypes = {
-    stickToTop: React.PropTypes.bool
+    stickToTop: React.PropTypes.bool,
+    setOffset: React.PropTypes.func
   }
 
   static defaultProps = {
-    stickToTop: false
+    stickToTop: false,
+    setOffset: (node, transformMethod, offset) => {
+      node.style[transformMethod] = `translate3d(0, ${offset}px,0)`;
+    }
   }
 
   componentDidMount() {
@@ -139,7 +143,7 @@ export default class OSBox extends React.Component {
     }
     newOffset = Math.max(Math.min(newOffset, this.node.parentNode.offsetHeight - nodeHeight), 0);
     if (newOffset !== null && this.offset !== newOffset) {
-      this.node.style[this.transformMethod] = `translate3d(0, ${newOffset}px,0)`;
+      this.props.setOffset(this.node, this.transformMethod, newOffset)
       this.offset = newOffset;
     }
     this.lastScrollY = currentScrollY;
