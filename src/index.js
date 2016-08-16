@@ -143,7 +143,7 @@ export default class OSBox extends React.Component {
     }
     newOffset = Math.max(Math.min(newOffset, this.node.parentNode.offsetHeight - nodeHeight), 0);
     if (newOffset !== null && this.offset !== newOffset) {
-      this.props.setOffset(this.node, this.transformMethod, newOffset)
+      this.props.setOffset(this.node, this.transformMethod, newOffset);
       this.offset = newOffset;
     }
     this.lastScrollY = currentScrollY;
