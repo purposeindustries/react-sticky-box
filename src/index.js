@@ -152,7 +152,7 @@ export default class OSBox extends React.Component {
   }
 
   render() {
-    const {stickToTop, ...rest} = this.props;
+    const {stickToTop, setOffset, ...rest} = this.props;
     return (
       <div {...rest} ref="container"/>
     );
